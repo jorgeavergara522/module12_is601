@@ -1,5 +1,172 @@
 # 📦 Project Setup
 
+
+README.md — Module 12: API Endpoints with Authentication & Calculations
+Module 12 – FastAPI Calculator API with Authentication
+
+This project is part of IS601 – Python for Web API Development.
+The goal of this assignment is to build an authenticated API using FastAPI, PostgreSQL, and JWT authentication, complete with BREAD (Browse, Read, Edit, Add, Delete) operations for user-specific calculations.
+
+The project includes:
+
+User registration and login
+
+JWT-based authentication
+
+Creation, listing, retrieval, updating, and deletion of calculations
+
+Integration tests
+
+CI/CD pipeline with GitHub Actions
+
+Docker deployment to Docker Hub
+
+🚀 Project Technologies
+
+FastAPI
+
+PostgreSQL
+
+SQLAlchemy / Alembic
+
+Docker & Docker Compose
+
+Pytest
+
+GitHub Actions (CI/CD)
+
+JWT (python-jose, bcrypt)
+
+📦 How to Run the Application Locally
+1. Clone the repository
+git clone https://github.com/jorgeavergara522/module12_is601
+cd module12_is601
+
+2. Start the project with Docker Compose
+docker-compose up --build
+
+
+This launches:
+
+FastAPI backend (port 8000)
+
+PostgreSQL database
+
+Redis test instance
+
+🌐 API Documentation (Swagger UI)
+
+Once running, open:
+
+👉 http://localhost:8000/docs
+
+This provides:
+
+Interactive endpoints
+
+Token authentication UI
+
+Schema/Example responses
+
+🔐 Authentication Flow
+1. Register a User
+
+POST /auth/register
+Create a new user account.
+
+2. Login
+
+POST /auth/login
+Returns:
+
+access_token
+
+refresh_token
+
+User profile details
+
+3. Authorize Swagger
+
+Click the green Authorize button and paste:
+
+Bearer <your_access_token>
+
+🧮 Calculations Endpoints
+➕ Create Calculation
+
+POST /calculations
+Operations supported: "addition", "subtraction", "multiplication", "division"
+
+📋 List All Calculations
+
+GET /calculations
+
+🔍 Read One
+
+GET /calculations/{calc_id}
+
+✏️ Update
+
+PUT /calculations/{calc_id}
+
+❌ Delete
+
+DELETE /calculations/{calc_id}
+
+All operations require a valid JWT token.
+
+🧪 Tests
+
+This project includes:
+
+Authentication tests
+
+Database tests
+
+Calculation logic tests
+
+Integration tests
+
+Run locally via:
+
+pytest
+
+
+GitHub Actions automatically runs these tests on every push.
+
+⚙️ CI/CD Pipeline
+
+A full GitHub Actions workflow is included:
+
+Jobs:
+
+Test – Run Python unit & integration tests
+
+Security – Trivy vulnerability scan
+
+Deploy – Build & push Docker image to Docker Hub
+
+Your working image is pushed to:
+
+👉 https://hub.docker.com/r/jav0613/module12_is601
+
+📄 Assignment Screenshot Requirements (Included in Canvas Upload)
+
+This project includes the following screenshots:
+
+✔️ GitHub Actions – All jobs successful
+✔️ Docker Hub image
+✔️ Swagger – Register
+✔️ Swagger – Login (JWT token)
+✔️ Swagger – GET /calculations
+✔️ Swagger – POST /calculations
+
+✍️ Reflection
+
+This module taught me how to build secure, production-ready API endpoints using FastAPI. I applied concepts like JWT authentication, dependency injection, PostgreSQL modeling, and environment-based configuration. The CI/CD pipeline gave me hands-on experience with automated testing and Docker image deployment.
+
+
+
 ---
 
 # 🧩 1. Install Homebrew (Mac Only)
